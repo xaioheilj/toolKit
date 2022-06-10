@@ -2,7 +2,7 @@ import os
 import exifread
 
 
-path = "D://Picture/IDCard/"
+path = "D:\\Picture\\IDCard\\"
 def reNameByTime(path):
     mlist = []
     # 获取文件名列表
@@ -14,7 +14,7 @@ def reNameByTime(path):
         modifytimes = os.path.getmtime(path + filename)
         filename_lower = filename.lower()
         # 筛选.jpg格式
-        if ".jpg" in filename_lower:
+        if '.jpg' in filename_lower:   #'.JPG', '.PNG', '.png', '.jpeg', '.JPEG')
             mlist.append(str(int(modifytimes)) + "-" + filename)  # .jpg
 
     mlist = sorted(mlist)
